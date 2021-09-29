@@ -1,0 +1,101 @@
+/* Modal Base Styles */
+.modal-content {
+  color: white;
+  background: var(--background);
+}
+.modal-header {
+  font-weight: bold;
+  border: none;
+  background: var(--dark);
+}
+.modal-label {
+  font-size: 0.9rem;
+  color: var(--primary);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.modal-input {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: block;
+  width: 100%;
+  padding: 0 0 0.5rem 0;
+}
+.modal-input:focus {
+  outline: 0;
+}
+.modal-footer {
+  border: none;
+}
+
+/* Chat Room Modal */
+#chat-list {
+  background: var(--grey);
+  padding: 8px 4px;
+  width: 100%;
+  color: #e4e4e4;
+  border: none;
+  border-radius: 5px;
+  margin: 0 0 16px 0;
+  font-size: 18px;
+}
+.chat-option-item {
+  list-style: none;
+  text-decoration: underline;
+  transition: color ease 0.2s;
+}
+.chat-option-item:hover {
+  cursor: pointer;
+  color: grey;
+  transition: color ease 0.2s;
+}
+
+/* Profile Modal */
+#profileAvatar {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+.avatar-wrap {
+  background-color: transparent;
+  padding: 0.25rem;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all ease 0.3s;
+}
+.avatar-wrap[selected] {
+  border-color: var(--primary);
+}
+.avatar-wrap:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.08);
+  transition: all ease 0.3s;
+}
+.avatar-wrap img {
+  height: auto;
+  width: 100%;
+  vertical-align: middle;
+  border-style: none;
+}
+.request-result-message {
+  font-size: 0.9rem;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 6px;
+}
+.success {
+  color: #c5c5c5;
+}
+.error {
+  color: red;
+}

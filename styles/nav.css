@@ -1,0 +1,27 @@
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+.nav-link {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+  border-bottom: 4px solid transparent;
+}
+.nav-link.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  background-color: transparent;
+}
+
+/* Tab Panes */
+.tab-content {
+  height: calc(100% - 108px);
+}
+.tab-pane {
+  height: 100%;
+}
+@media all and (orientation: portrait) {
+  .tab-content {
+    height: var(--chat-height);
+  }
+}

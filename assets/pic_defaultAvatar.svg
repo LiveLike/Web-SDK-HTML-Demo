@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>pic_defaultAvatar</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Chat-+-Sticker-Keyboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pic_defaultAvatar">
+            <g>
+                <rect id="Rectangle" fill="#505A64" x="0" y="0" width="64" height="64"></rect>
+                <path d="M31.9590262,14 C40.9427465,14 44.8185604,18.1297028 43.8568799,26.9807577 C42.8951994,35.8318125 39.1802051,40 31.9730147,40 C26.0823195,40 21.3936793,37.5331739 20.2595234,28.1644789 C19.1253676,18.7957839 21.4756955,14 31.9590262,14 Z" id="Path-2" fill="#8C96A0"></path>
+                <path d="M8,64 C13.6440504,52.375041 21.5113023,46.3802666 31.6017556,46.0156768 C41.692209,45.651087 49.8249571,51.6458614 56,64 L8,64 Z" id="Path-3" fill="#8C96A0"></path>
+            </g>
+        </g>
+    </g>
+</svg>

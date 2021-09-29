@@ -1,0 +1,238 @@
+livelike-widget-root.custom-widget livelike-widget-header {
+  background: var(--grey);
+  text-align: center;
+  display: block;
+  padding-bottom: 1.25rem;
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+livelike-widget-root.custom-widget livelike-timer.custom-timer {
+  background: #fac83c;
+  top: 0;
+  height: 5px;
+}
+livelike-widget-root.custom-widget .widget-kind {
+  color: white;
+  opacity: 30%;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  padding: 1.25rem 1.25rem 0;
+}
+livelike-widget-root.custom-widget livelike-title.custom-title {
+  color: white;
+  font-size: 1.25rem;
+  padding: 0.25rem 1.25rem 0;
+  display: block;
+  width: calc(100% - 0px);
+  line-height: 130%;
+}
+livelike-widget-root.custom-widget livelike-widget-body {
+  background: var(--grey);
+  padding: 0 1.25rem 1.5rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 0;
+}
+livelike-widget-root.custom-widget livelike-select {
+  background: transparent;
+}
+livelike-widget-root.custom-widget livelike-option {
+  color: white;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 20%) inset;
+  border: none;
+  padding: 0;
+  margin-bottom: 0.625rem;
+  height: auto;
+  transition: all 0.2s;
+}
+livelike-widget-root.custom-widget livelike-option:last-child {
+  margin-bottom: 0px;
+}
+livelike-widget-root.custom-widget livelike-option[selected] {
+  color: #000;
+  background: white;
+}
+livelike-widget-root.custom-widget livelike-description {
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.2;
+  padding: 0.75rem 0.5rem;
+}
+livelike-widget-root.custom-widget livelike-percentage {
+  font-size: 1.25rem;
+}
+livelike-widget-root.custom-widget livelike-progress {
+  height: 0.375rem;
+  bottom: 0;
+  left: 0;
+  top: auto;
+  background: #505760;
+  border-radius: 0 0 0 6px;
+}
+livelike-widget-root.custom-widget livelike-progress[value="100"] {
+  border-radius: 0 0 6px 6px;
+}
+livelike-widget-root.custom-widget livelike-option[selected] livelike-progress {
+  background: #0096ff;
+  border-color: #0096ff;
+}
+livelike-widget-root.custom-widget livelike-select.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0.625rem;
+  grid-row-gap: 0.675rem;
+}
+livelike-widget-root.custom-widget livelike-select.image-grid livelike-option {
+  margin-bottom: 0;
+  min-height: 60px;
+}
+livelike-widget-root.custom-widget livelike-select.image-grid livelike-image {
+  width: auto;
+}
+livelike-widget-root.custom-widget
+  livelike-option
+  div.livelike-voting-image-container {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+livelike-widget-root.custom-widget
+  livelike-select:not(.prediction-widget)
+  livelike-option[correct]
+  livelike-progress {
+  background: #00ff78;
+  border-color: #00ff78;
+}
+livelike-widget-root.custom-widget
+  livelike-select:not(.prediction-widget)
+  livelike-option[incorrect]
+  livelike-progress {
+  background: #ff3c3c;
+  border-color: #ff3c3c;
+}
+livelike-cheer-meter
+  livelike-widget-root.custom-widget
+  livelike-select.image-grid {
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+}
+livelike-cheer-meter
+  livelike-widget-root.custom-widget
+  livelike-select.image-grid
+  livelike-option {
+  display: inline-block;
+  border: none;
+  box-shadow: none;
+  flex: 0 0 50%;
+}
+livelike-cheer-meter
+  livelike-widget-root.custom-widget
+  livelike-select.image-grid
+  livelike-option
+  custom-cheer-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+livelike-cheer-meter
+  livelike-widget-root.custom-widget
+  livelike-select.image-grid
+  livelike-image {
+  width: 60px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+livelike-cheer-meter livelike-widget-root.custom-widget livelike-vote-count {
+  margin-top: -1rem;
+  letter-spacing: 2px;
+  font-size: 4rem;
+  -webkit-text-fill-color: rgba(0, 120, 255, 0.12);
+  -webkit-text-stroke: 1.5px rgb(0, 180, 255);
+  text-shadow: 0 0 1rem rgb(0 120 255 / 60%);
+}
+livelike-cheer-meter
+  livelike-widget-root.custom-widget
+  livelike-option[selected] {
+  color: var(--primary);
+  background: none;
+}
+livelike-cheer-meter livelike-widget-root.custom-widget livelike-description {
+  text-align: center;
+}
+​
+/* image widget */
+livelike-widget-root.custom-widget .livelike-voting-image-container livelike-percentage {
+  padding: 0 0.5rem 0.5rem;
+}
+livelike-widget-root.custom-widget
+  .livelike-voting-image-container
+  livelike-description {
+  padding: 0.5rem 0.5rem 0;
+}
+​
+/* Alert */
+livelike-widget-root.custom-widget .widget-captioned-media .media-caption {
+  color: white;
+  opacity: 1;
+  padding: 0 1rem 0 0;
+}
+livelike-widget-root.custom-widget livelike-footer a.widget-link {
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  margin-top: 1rem;
+}
+livelike-widget-root.custom-widget livelike-footer a.widget-link:after {
+  display: none;
+}
+livelike-widget-root.custom-widget .widget-media img {
+  width: 100%;
+}
+.widget-caption {
+  color: white !important;
+  opacity: 80% !important;
+}
+/* Slider */
+livelike-widget-root.custom-widget .result-mark {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--primary);
+  border: none;
+  bottom: 1.9rem;
+  box-shadow: 0 0 0 0.425rem rgb(35 45 56 / 72%);
+}
+livelike-widget-root.custom-widget .result-mark:before {
+  content: "AVERAGE";
+  position: relative;
+  letter-spacing: 0.5px;
+  font-size: 0.625rem;
+  color: white;
+  background: rgb(35 45 56 / 72%);
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  top: 50%;
+  left: calc(-50% - 0.75rem);
+  width: 100%;
+  opacity: 0;
+  text-align: center;
+  transition: all 0.2s;
+}
+livelike-widget-root.custom-widget .input-container:hover .result-mark:before {
+  top: 90%;
+  opacity: 1;
+}
+livelike-widget-root.custom-widget .slider-thumb {
+  bottom: 1rem;
+}
+/* Rich Post */
+livelike-rich-post img {
+  max-width: 100%;
+  padding: 8px;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="395px" height="474px" viewBox="0 0 395 474" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="500" height="500"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2-Copy" transform="translate(-53.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Rectangle"></g>
+            <path d="M305.743734,52.3151326 L269.134274,1.41528193 L310.767801,-59 L383.498755,-59 L305.743734,52.3151326 Z M419.69195,-59 L489.266058,-59 L359.324481,126.813331 L323.906058,77.5679985 L419.69195,-59 Z M189.136598,-59 L330.308382,137.283817 C306.143071,125.370505 278.871701,118.649024 250.0239,118.649024 C248.041162,118.649024 246.067386,118.686095 244.100581,118.74853 L121.827054,-59 L189.136598,-59 Z M210.525477,122.954089 C210.581245,122.942382 210.641992,122.943358 210.699751,122.935554 C191.980747,127.062094 174.351203,134.043069 158.339917,143.421924 L10.7339419,-59 L85.5263071,-59 L210.525477,122.954089 Z M250,144 C343.739271,144 420.001134,218.017766 420,309 C420,399.981134 343.739271,474 250,474 C156.261862,474 80,399.981134 80,309 C80,218.018866 156.261862,144 250,144 Z" id="Combined-Shape" fill="#8B572A" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

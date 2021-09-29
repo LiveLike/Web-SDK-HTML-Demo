@@ -1,0 +1,120 @@
+.leaderboard {
+  width: 0;
+  height: 100%;
+  padding: 0;
+  background: var(--dark);
+  color: white;
+  z-index: 1000;
+  transition: all 0.5s;
+  position: absolute;
+  right: 0;
+}
+.leaderboard.active {
+  width: 100%;
+}
+.leaderboard-header {
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.leaderboard-header .title {
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin: auto 0;
+}
+.leaderboard-wrap {
+  padding: 0 1rem;
+  height: 100%;
+  overflow-y: auto;
+  background: var(--dark);
+}
+.list-item,
+.list-item-header {
+  list-style: none;
+  padding: 0.8rem 1rem;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.list-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+li.list-item:nth-child(1) .rank,
+li.list-item:nth-child(2) .rank,
+li.list-item:nth-child(3) .rank {
+  font-weight: bold;
+}
+li.list-item:nth-child(1):before,
+li.list-item:nth-child(2):before,
+li.list-item:nth-child(3):before {
+  content: '';
+  position: absolute;
+  left: 0.375rem;
+  top: -4rem;
+  width: 2.125rem;
+  height: 2.125rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+}
+.leaderboard.active li.list-item:nth-child(1):before {
+  top: 0.125rem;
+  background-image: url(../assets/lb_ic_gold.svg);
+  transition-delay: 0.5s;
+}
+.leaderboard.active li.list-item:nth-child(2):before {
+  top: 0.125rem;
+  background-image: url(../assets/lb_ic_silver.svg);
+  transition-delay: 0.6s;
+}
+.leaderboard.active li.list-item:nth-child(3):before {
+  top: 0.125rem;
+  background-image: url(../assets/lb_ic_brown.svg);
+  transition-delay: 0.7s;
+}
+.list-item-header.fixed {
+  position: sticky;
+  top: 0;
+  background: var(--dark);
+  font-weight: bold;
+  color: var(--opaque);
+  z-index: 10;
+}
+.leaderboard .rank {
+  width: 40px;
+  z-index: 1;
+}
+.leaderboard .name {
+  width: 100%;
+  padding: 0 1rem;
+  font-weight: bold;
+}
+@media all and (orientation: portrait) {
+  .leaderboard > .leaderboard-header {
+    display: none;
+    background: var(--background);
+  }
+  .leaderboard.active > .leaderboard-header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+  .leaderboard {
+    bottom: -100%;
+    width: 100%;
+  }
+  .leaderboard.active {
+    bottom: 0;
+    width: 100%;
+  }
+  .leaderboard-wrap{
+    height: var(--chat-height);
+  }
+}

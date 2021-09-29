@@ -1,0 +1,111 @@
+livelike-message-list {
+  padding: 1rem 1rem 0rem 1rem;
+}
+.message-wrapper {
+  border-radius: 0.25rem;
+  background: var(--grey);
+  padding: 0.5rem 2rem 0.5rem 1rem;
+}
+.sender-message {
+  color: white;
+}
+.sender-name {
+  font-size: 0.9rem;
+  color: var(--opaque);
+}
+.avatar {
+  margin: 0 0.75rem 0 0;
+}
+.avatar img,
+.avatar svg {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.message-timestamp {
+  font-size: 0.875rem;
+  color: var(--opaque);
+  padding: 0 1rem 0 0;
+  margin: 0;
+}
+.message-item-container {
+  margin: 0 0 0.75rem 0;
+}
+.message-item-container.self {
+  justify-content: flex-end;
+}
+livelike-chat-composer {
+  margin: 0 1rem 1.5rem;
+}
+.livelike-chat-input {
+  color: white;
+  background: var(--grey);
+  border-radius: 0.25rem;
+  border: 0px solid rgba(255, 255, 255, 0.12);
+  font-size: 1rem;
+  padding: 0.5rem 5rem 0.5rem 1rem;
+}
+.livelike-chat-input::placeholder {
+  color: var(--opaque);
+}
+.sticker-picker-container {
+  right: 3rem;
+  bottom: 0.3rem;
+}
+.sticker-icon svg {
+  fill: var(--primary);
+}
+.send-icon svg {
+  fill: var(--primary);
+}
+.send-icon {
+  padding-left: 1rem;
+}
+/* reaction */
+.reaction-item-wrap {
+  padding: 2px 4px;
+  background: var(--dark);
+  height: inherit;
+}
+.reaction-count {
+  line-height: 1;
+}
+.reaction-item {
+  margin: 4px 2px;
+}
+.reaction-button {
+  padding: 0.2rem 0.25rem 0.25rem 0.25rem;
+  border-radius: 50%;
+  font-family: sans-serif !important;
+  font-size: 7px !important;
+  line-height: 0 !important;
+  transform: translate(-10px, -10px);
+}
+.reaction-item.selected,
+.reaction-item:hover,
+.reaction-item:focus {
+  background: rgba(255, 255, 255, 0.12);
+}
+.mini-reactions {
+  right: 0.5rem;
+  top: -0.425rem;
+}
+.mini-reaction-image {
+  margin: 0 0.25rem 0 0;
+}
+.mini-reaction-count {
+  line-height: 1;
+  margin-left: 0.25rem;
+}
+.down-icon {
+  right: calc(50% - 20px);
+  bottom: 6.5rem;
+  padding: 0.125rem 7.5px;
+  border-radius: 0.75rem;
+  background: var(--primary);
+}
+.down-icon svg > rect {
+  fill: var(--primary);
+}
+.sender-message.deleted {
+  color: var(--opaque);
+}

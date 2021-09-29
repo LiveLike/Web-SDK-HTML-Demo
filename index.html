@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>LiveLike Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://unpkg.com/bootstrap@4.5.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles/app.css" />
+  <link rel="stylesheet" href="styles/custom-widgets.css" />
+  <link rel="stylesheet" href="styles/header.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/modal.css" />
+  <link rel="stylesheet" href="styles/leaderboard.css" />
+</head>
+
+<body>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="https://unpkg.com/@livelike/engagementsdk@2.4.0/livelike.umd.js"></script>
+  <script src="scripts/setupProfile.js"></script>
+  <script src="scripts/setupLeaderboard.js"></script>
+
+  <!-- Custom Widget Templates Start -->
+  <!-- Custom Text Poll -->
+  <template kind="text-poll">
+    <livelike-widget-root class="custom-widget">
+      <livelike-widget-header class="widget-header" slot="header">
+        <livelike-timer class="custom-timer"></livelike-timer>
+        <div class="widget-kind">TEXT POLL</div>
+        <livelike-title class="custom-title"></livelike-title>
+      </livelike-widget-header>
+      <livelike-widget-body>
+        <livelike-select>
+          <template>
+            <livelike-option>
+              <div style="width:100%;display:flex;align-items:center;">
+                <livelike-progress></livelike-progress>
+                <livelike-description></livelike-description>
+                <livelike-percentage></livelike-percentage>
+              </div>
+            </livelike-option>
+          </template>
+        </livelike-select>
+      </livelike-widget-body>
+    </livelike-widget-root>
+  </template>
+  <!-- Custom Image Poll -->
+  <template kind="image-poll">
+    <livelike-widget-root class="custom-widget">
+      <livelike-widget-header class="widget-header" slot="header">
+        <livelike-timer class="custom-timer"></livelike-timer>
+        <div class="widget-kind">IMAGE POLL</div>
+        <livelike-title class="custom-title"></livelike-title>
+      </livelike-widget-header>
+      <livelike-widget-body>
+        <livelike-select class="image-grid">
+          <template>
+            <livelike-option>
+              <div class="livelike-voting-image-container">
+                <div class="image-description-wrapper">
+                  <livelike-description></livelike-description>
+                </div>
+                <livelike-percentage></livelike-percentage>
+              </div>
+              <livelike-image height="60px"></livelike-image>
+              <livelike-progress></livelike-progress>
+            </livelike-option>
+          </template>
+        </livelike-select>
+      </livelike-widget-body>
+    </livelike-widget-root>
+  </template>
+  <!-- Custom Text Quiz -->
+  <template kind="text-quiz">
+    <livelike-widget-root class="custom-widget">
+      <livelike-widget-header class="widget-header" slot="header">
+        <livelike-timer class="custom-timer"></livelike-timer>
+        <div class="widget-kind">TEXT QUIZ</div>
+        <livelike-title class="custom-title"></livelike-title>
+      </livelike-widget-header>
+      <livelike-widget-body>
+        <livelike-select>
+          <template>
+            <livelike-option>
+              <div style="width:100%;display:flex;align-items:center;">
+                <livelike-progress></livelike-progress>
+                <livelike-description></livelike-description>
+                <livelike-percentage></livelike-percentage>
+              </div>
+            </livelike-option>
+          </template>
+        </livelike-select>
+      </livelike-widget-body>
+    </livelike-widget-root>
+  </template>
+  <!-- Custom Image Quiz -->
+  <template kind="image-quiz">
+    <livelike-widget-root class="custom-widget">
+      <livelike-widget-header class="widget-header" slot="header">
+        <livelike-timer class="custom-timer"></livelike-timer>
+        <div class="widget-kind">IMAGE QUIZ</div>
+        <livelike-title class="custom-title"></livelike-title>
+      </livelike-widget-header>
+      <livelike-widget-body>
+        <livelike-select class="image-grid">
+          <template>
+            <livelike-option>
+              <div class="livelike-voting-image-container">
+                <div class="image-description-wrapper">
+                  <livelike-description></livelike-description>
+                </div>
+                <livelike-percentage></livelike-percentage>
+              </div>
+              <livelike-image height="60px"></livelike-image>
+              <livelike-progress></livelike-progress>
+            </livelike-option>
+          </template>
+        </livelike-select>
+      </livelike-widget-body>
+    </livelike-widget-root>
+  </template>
+  <!-- Custom Text Prediction -->
+  <template kind="text-prediction">
+    <livelike-widget-root class="custom-widget">
+      <livelike-widget-header class="widget-header" slot="header">
+        <livelike-timer class="custom-timer"></livelike-timer>
+        <div class="widget-kind">TEXT PREDICTION</div>
+        <livelike-title class="custom-title"></livelike-title>
+      </livelike-widget-header>
+      <livelike-widget-body>
+        <livelike-select>
+          <template>
+            <livelike-option>
+              <div style="width:100%;display:flex;align-items:center;">
+                <livelike-description></livelike-description>
+              </div>
+            </livelike-option>
+          </template>
+        </livelike-select>
+      </livelike-widget-body>
+    </livelike-widget-root>
+  </template>
+  <!-- Custom Image Prediction -->
+  <template kind="image-prediction">
+    <livelike-widget-root class="custom-widget">
+      <livelike-widget-header class="widget-header" slot="header">
+        <livelike-timer class="custom-timer"></livelike-timer>
+        <div class="widget-kind">IMAGE PREDICTION</div>
+        <livelike-title class="custom-title"></livelike-title>
+      </livelike-widget-header>
+      <livelike-widget-body>
+        <livelike-select class="image-grid prediction-widget">
+          <template>
+            <livelike-option>
+              <div class="livelike-voting-image-container">
+                <div class="image-description-wrapper">
+                  <livelike-description></livelike-description>
+                </div>
+                <livelike-percentage></livelike-percentage>
+              </div>
+              <livelike-image height="60px"></livelike-image>
+              <livelike-progress></livelike-progress>
+            </livelike-option>
+          </template>
+        </livelike-select>
+      </livelike-widget-body>
+    </livelike-widget-root>
+  </template>
+  <!-- Custom Text Prediction Follow up -->
+  <template kind="text-prediction-follow-up">
+    <livelike-widget-root class="custom-widget">
+      <livelike-widget-header class="widget-header" slot="header">
+        <livelike-timer class="custom-timer"></livelike-timer>
+        <div class="widget-kind">TEXT PREDICTION FOLLOW UP</div>
+        <livelike-title class="custom-title"></livelike-title>
+      </livelike-widget-header>
+      <livelike-widget-body>
+        <livelike-select>
+          <template>
+            <livelike-option>
+              <div style="width:100%;display:flex;align-items:center;">
+                <livelike-progress></livelike-progress>
+                <livelike-description></livelike-description>
+                <livelike-percentage></livelike-percentage>
+              </div>
+            </livelike-option>
+          </template>
+        </livelike-select>
+      </livelike-widget-body>
+    </livelike-widget-root>
+  </template>
+  <!-- Custom Image Prediction Follow up -->
+  <template kind="image-prediction-follow-up">
+    <livelike-widget-root class="custom-widget">
+      <livelike-widget-header class="widget-header" slot="header">
+        <livelike-timer class="custom-timer"></livelike-timer>
+        <div class="widget-kind">IMAGE PREDICTION FOLLOW UP</div>
+        <livelike-title class="custom-title"></livelike-title>
+      </livelike-widget-header>
+      <livelike-widget-body>
+        <livelike-select class="image-grid">
+          <template>
+            <livelike-option>
+              <div class="livelike-voting-image-container">
+                <div class="image-description-wrapper">
+                  <livelike-description></livelike-description>
+                </div>
+                <livelike-percentage></livelike-percentage>
+              </div>
+              <livelike-image height="60px"></livelike-image>
+              <livelike-progress></livelike-progress>
+            </livelike-option>
+          </template>
+        </livelike-select>
+      </livelike-widget-body>
+    </livelike-widget-root>
+  </template>
+  <!-- Custom Cheer Meter -->
+  <template kind="cheer-meter" id="custom-cheer">
+    <livelike-widget-root class="custom-widget">
+      <livelike-widget-header class="widget-header" slot="header">
+        <livelike-timer class="custom-timer"></livelike-timer>
+        <div class="widget-kind">CHEER METER</div>
+        <livelike-title class="custom-title"></livelike-title>
+      </livelike-widget-header>
+      <livelike-widget-body>
+        <div class="cheer-image-body">
+          <livelike-vote-count></livelike-vote-count>
+          <livelike-select class="image-grid">
+            <template>
+              <livelike-option>
+                <custom-cheer-option></custom-cheer-option>
+              </livelike-option>
+            </template>
+          </livelike-select>
+        </div>
+      </livelike-widget-body>
+    </livelike-widget-root>
+  </template>
+  <!-- Custom Widget Templates End -->
+
+  <main class="app">
+    <!-- Video element -->
+    <div class="column one">
+      <section class="video-container">
+        <video controls="controls" autoplay muted loop></video>
+      </section>
+    </div>
+
+    <!-- Right Panel containing header, tab panel, leaderboard -->
+    <div class="column two">
+      <header class="main-header">
+        <div class="logo"><img src="./assets/logo.svg" /></div>
+        <div class="actions">
+          <!-- Room Switcher button -->
+          <a
+            class="header-icon"
+            data-toggle="modal"
+            data-target="#room-switcher"
+          >
+            <div class="unread-icon"></div>
+            <img
+              id="open-chat-switcher"
+              src="./assets/ic_chat.svg"
+              class="filter-green"
+            />
+          </a>
+          <!-- Open Leaderboard button -->
+          <a class="header-icon">
+            <img id="open-leaderboard" src="./assets/ic_trophy.svg" />
+          </a>
+          <!-- Profile button -->
+          <a class="header-icon profile profile-wrap">
+            <div data-toggle="modal" data-target="#my-profile">
+              <img
+                src="./assets/pic_defaultAvatar.svg"
+                id="my-profile-image"
+              />
+            </div>
+            <div class="profile-stats"></div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Pop-up widget -->
+      <div class="widget-container">
+        <livelike-widgets id="pop-up"></livelike-widgets>
+      </div>
+
+      <!-- Tab panel naviation -->
+      <ul class="nav nav-justified" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            id="public-chat-tab"
+            data-toggle="tab"
+            href="#public-chat"
+            role="tab"
+            aria-controls="public-chat"
+            aria-selected="true"
+            >LIVE CHAT</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="private-chat-tab"
+            data-toggle="tab"
+            href="#private-chat"
+            role="tab"
+            aria-controls="private-chat"
+            aria-selected="false"
+            >INFLUENCER</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="timeline-tab"
+            data-toggle="tab"
+            href="#timeline"
+            role="tab"
+            aria-controls="timeline"
+            aria-selected="false"
+            >TIMELINE</a
+          >
+        </li>
+      </ul>
+
+      <div class="tab-content" id="myTabContent">
+        <!-- Public Chat Tab -->
+        <div
+          class="tab-pane fade show active"
+          id="public-chat"
+          role="tabpanel"
+          aria-labelledby="public-chat"
+        >
+          <livelike-chat id="public" messagemenus showavatar>
+            <div slot="message-list-empty">
+              <h1 style="color: white;">
+                No messages yet. Send the first one!
+              </h1>
+            </div>
+          </livelike-chat>
+        </div>
+        <!-- Influencer Chat Tab -->
+        <div
+          class="tab-pane fade"
+          id="private-chat"
+          role="tabpanel"
+          aria-labelledby="private-chat"
+        >
+          <livelike-chat id="influencer" showavatar timestamps hidecomposer>
+            <div slot="message-list-empty">
+              <h1 style="color: white;">
+                No messages yet!
+              </h1>
+            </div>
+          </livelike-chat>
+        </div>
+        <!-- Widget Timeline Tab -->
+        <div
+          class="tab-pane fade"
+          id="timeline"
+          role="tabpanel"
+          aria-labelledby="timeline"
+        >
+          <livelike-widgets
+            id="timeline"
+            mode="timeline"
+            class="timeline-widgets"
+          ></livelike-widgets>
+        </div>
+      </div>
+      <!-- Leaderboard Flyout -->
+      <div id="leaderboard-panel" class="leaderboard">
+        <header class="leaderboard-header">
+          <div class="title">LEADERBOARD</div>
+          <!-- Close leaderboard button -->
+          <div class="actions">
+            <a>
+              <img
+                id="close-leaderboard"
+                src="./assets/ic_x.svg"
+                width="12"
+              />
+            </a>
+          </div>
+        </header>
+        <div class="leaderboard-wrap">
+          <div class="list-item-header fixed">
+            <div class="rank">#</div>
+            <div class="name">Username</div>
+            <div class="pts">PTS</div>
+          </div>
+          <!-- Leaderboard list that will populate when leaderboard resouce loads -->
+          <div class="leaderboard-list-container"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Profile Modal -->
+  <div class="modal fade" id="my-profile" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">My Profile</div>
+        <div class="modal-body">
+
+          <div class="form">
+            <!-- Profile nickname input -->
+            <label class="modal-label" for="profileNickname">Nickname</label>
+            <input id="profileNickname" class="modal-input" />
+            <span
+              id="profile-results"
+              class="request-result-message"
+            ></span>
+            <!-- Avatar selector -->
+            <label class="modal-label" for="profileAvatar">Avatar</label>
+            <div id="profileAvatar">
+              <div class="avatar-wrap">
+                <img id="avatarImage" src="./assets/bluerobot.png" />
+              </div>
+              <div class="avatar-wrap">
+                <img id="avatarImage" src="./assets/redrobot.png" />
+              </div>
+              <div class="avatar-wrap">
+                <img id="avatarImage" src="./assets/blackrobot.png" />
+              </div>
+              <div class="avatar-wrap">
+                <img id="avatarImage" src="./assets/yellowrobot.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button id="updateNickname" class="btn btn-primary btn-block">
+            Update
+          </button>
+          <button
+            type="button"
+            data-dismiss="modal"
+            class="btn btn-block"
+            style="color: #fff;"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Room Switcher Modal -->
+  <div class="modal fade" id="room-switcher" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">Select Chat Room</div>
+        <div class="modal-body">
+          <div class="chat-list-wrap">
+            <!-- Chat room Select that will populate when chat list resource loads -->
+            <select id="chat-list"></select>
+            <!-- Chat room creation title input -->
+            <label class="modal-label" for="chatTitleInput">Create Chat room</label>
+            <input
+              id="chatTitleInput"
+              class="modal-input"
+              placeholder="Add chat room title"
+            />
+            <span id="chat-res" class="request-result-message"></span>
+          </div>
+        </div>
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button
+            id="createChatButton"
+            data-dismiss="modal"
+            class="btn btn-primary btn-block"
+          >
+            Create
+          </button>
+          <button
+            type="button"
+            data-dismiss="modal"
+            class="btn btn-block"
+            style="color: #fff;"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetchData();
+  });
+</script>
+
+<link rel="stylesheet" href="styles/custom-chat.css" />
+<script src="scripts/setupVideo.js"></script>
+<script src="scripts/initLiveLike.js"></script>
+<script src="scripts/chatSwitcher.js"></script>
+<script src="scripts/fetchData.js"></script>
+<script src="scripts/setupLiveLikeElements.js"></script>
+<script src="scripts/setupCustomWidgets.js"></script>
+<script src="scripts/customWidgetElements.js"></script>
+<script src="scripts/toggleLeaderboard.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"
+></script>
